@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "plugins": [],
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "globals": {}
+}
