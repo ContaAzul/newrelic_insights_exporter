@@ -1,0 +1,31 @@
+{
+  "name": "@contaazul/newrelic_insights_exporter",
+  "version": "1.0.0",
+  "description": "New Relic insights exporter for Prometheus",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint \"src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ContaAzul/newrelic_insights_exporter.git"
+  },
+  "author": "ContaAzul",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ContaAzul/newrelic_insights_exporter/issues"
+  },
+  "homepage": "https://github.com/ContaAzul/newrelic_insights_exporter#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "prom-client": "^11.1.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0"
+  }
+}
