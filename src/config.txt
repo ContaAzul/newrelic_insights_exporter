@@ -1,0 +1,12 @@
+[{
+  "name": "JS_errors_count",
+  "help": "Count a quantity of js errors",
+  "query": "SELECT count(*) from JavaScriptError where errorMessage NOT LIKE 'Syntax error, unrecognized expression:%' and appName = 'ContaAzulFront' SINCE 1 minute ago",
+  "type": "gauge"
+},
+{
+  "name": "Initial_load",
+  "help": "get initial load average",
+  "query": "SELECT average(duration) FROM BrowserInteraction SINCE 1 minute ago WHERE category = 'Initial page load' and appName = 'ContaAzulFront'",
+  "type": "gauge"
+}]
