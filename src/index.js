@@ -1,8 +1,5 @@
-const express = require('express');
+const Server = require('./app/server');
+const router = require('./app/router');
 
-const app = express();
-const port = process.env.PORT || 9696;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+Server.route(router);
+Server.start();
