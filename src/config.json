@@ -1,5 +1,5 @@
 [{
-  "name": "newrelic_insights_initial_load_average",
+  "name": "initial_load_average",
   "help": "returns the initial load average",
   "type": "gauge",
   "query": "SELECT average(duration) FROM BrowserInteraction WHERE category = 'Initial page load' SINCE 1 minute ago"
