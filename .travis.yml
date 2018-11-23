@@ -1,5 +1,15 @@
+dist: trusty
+sudo: required
 language: node_js
 node_js:
   - "8.11"
+services:
+  - docker
 script:
   - npm run lint
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/docker-push.sh
+    on:
+      tags: true

@@ -6,7 +6,7 @@ let metrics = [];
 
 const collectData = () => new Promise((resolve, reject) => {
   if (!metrics.length) {
-    metrics = prometheusPlugin.createCharts(JSON.parse(fs.readFileSync('src/config.txt', 'utf8')));
+    metrics = prometheusPlugin.createCharts(JSON.parse(fs.readFileSync('src/config.json', 'utf8')));
   }
 
   Promise.all(metrics.map(item => apiRequest.collectData(item)))
