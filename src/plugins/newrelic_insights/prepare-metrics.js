@@ -10,7 +10,7 @@ const collectData = () => new Promise((resolve, reject) => {
       const fileMetrics = extractor.getFromFile();
       metrics = prometheusPlugin.createCharts(fileMetrics);
     } catch (error) {
-      return Promise.reject(new Error(error));
+      Promise.reject(new Error(error));
     }
   }
 
