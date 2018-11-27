@@ -1,12 +1,17 @@
-const fs = require('fs');
 const apiRequest = require('./api-request');
 const prometheusPlugin = require('../prometheus/metric-type');
+const extractor = require('../../helpers/extract-file-data');
 
 let metrics = [];
 
 const collectData = () => new Promise((resolve, reject) => {
   if (!metrics.length) {
-    metrics = prometheusPlugin.createCharts(JSON.parse(fs.readFileSync('src/config.json', 'utf8')));
+    try {
+      const fileMetrics = extractor.getFromFile();
+      metrics = prometheusPlugin.createCharts(fileMetrics);
+    } catch (error) {
+      Promise.reject(new Error(error));
+    }
   }
 
   Promise.all(metrics.map(item => apiRequest.collectData(item)))
