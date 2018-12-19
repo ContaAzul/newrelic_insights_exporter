@@ -1,6 +1,6 @@
 {
   "name": "@contaazul/newrelic_insights_exporter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "New Relic insights exporter for Prometheus",
   "scripts": {
     "start": "node ./src/index.js",
